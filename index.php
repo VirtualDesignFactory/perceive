@@ -1,4 +1,3 @@
 <?php
-use vdf\perceive;
-
-echo 'Testing';
+// Initilise the application
+include_once 'core/vdf.perceive.init.php';

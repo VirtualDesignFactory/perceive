@@ -1,6 +1,18 @@
 <?php
 namespace vdf\perceive;
 
+use PDO;
+
+/**
+ * Provides access to the database and CRUD functionality through public methods:
+ *
+ * create
+ * update
+ * select
+ * delete
+ * rawsql
+ *
+ */
 class Database
 {
     // Class variables
@@ -51,7 +63,7 @@ class Database
      *
      * @return [$instance] [An instance of the connection to the database]
      */
-    public static function getInstance()
+    public static function getHandle()
     {
         if (!isset(self::$instance))
         {
