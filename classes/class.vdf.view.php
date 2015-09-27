@@ -10,6 +10,15 @@ class View
         $this->controller = $controller;
     }
 
+    /**
+     * Destructor
+     * unset class variables
+     */
+    public function __destruct()
+    {
+        unset($this->controller);
+    }
+
     public function dataIn($data = null)
     {
         if (empty($data)) {
@@ -18,6 +27,7 @@ class View
         } else {
             // There is incoming data
             // TODO: perform more intellegent actions with incoming data
+            $this->draw();
             foreach ($data as $name => $value) {
                 echo $name . ' : ' . $value . '<br />';
             }
@@ -26,23 +36,6 @@ class View
 
     private function draw()
     {
-        ?>
-
-        <html>
-            <head>
-                <title>Percieve Database</title>
-            </head>
-            <body>
-                <form name="test" method="post">
-                    <input type="text" name="input1" /><br />
-                    <input type="text" name="input2" /><br />
-                    <input type="text" name="input3" /><br />
-                    <input type="text" name="input4" /><br />
-                    <button type="submit">Push Me!</button><br />
-                </form>
-            </body>
-        </htmk>
-
-        <?php
+        $header = new Header();
     }
 }

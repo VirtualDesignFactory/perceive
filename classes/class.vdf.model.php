@@ -23,6 +23,16 @@ class Model
     }
 
     /**
+     * Destructor
+     * unset class variables
+     */
+    public function __destruct()
+    {
+        unset($this->view);
+        unset($this->db);
+    }
+
+    /**
      * Sets the view object
      * @param [View] $view      - Stores the View in a private variable for later reference
      */

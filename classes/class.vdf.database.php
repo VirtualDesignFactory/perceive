@@ -41,6 +41,7 @@ class Database
             die ($e->getMessage());
         }
     }
+
     /**
      * Prevent cloning or serializing
      */
@@ -50,13 +51,15 @@ class Database
     private function __sleep()
     {
     }
+    
     /**
      * Destructor
-     * close the database connection by assigning $instance to null
+     * unset class variables
      */
     public function __destruct()
     {
-        $this->instance = null;
+        unset($this->instance);
+        unset($this->db);
     }
     /**
      * Get an instance of the database connection

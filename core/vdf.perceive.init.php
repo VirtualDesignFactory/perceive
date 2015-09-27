@@ -9,6 +9,9 @@ use vdf\percieve\Database;
 session_name('Perceive Database');
 session_start();
 
+$_SESSION['username'] = 'Doug';
+$_SESSION['userlevel'] = 'Viewer';
+
 // Configuration Files
 include_once 'config/vdf.database.config.php';
 
@@ -19,6 +22,8 @@ foreach ($c as $name => $value) {
 
 // Autoloaders
 include_once 'autoloaders/vdf.autoload.class.php';
+include_once 'autoloaders/vdf.autoload.interface.php';
+include_once 'autoloaders/vdf.autoload.views.php';
 
 // Start the MCV Implimentation
 $model      = new Model();

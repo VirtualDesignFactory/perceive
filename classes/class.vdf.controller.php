@@ -9,6 +9,15 @@ class Controller
     {
         $this->model = $model;
     }
+    
+    /**
+     * Destructor
+     * unset class variables
+     */
+    public function __destruct()
+    {
+        unset($this->model);
+    }
 
     public function dataIn($post_var)
     {
